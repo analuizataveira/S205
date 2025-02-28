@@ -1,46 +1,78 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard App Inatel</title>
-    <!-- Importando o arquivo CSS -->
-    <link rel="stylesheet" href="styles.css">
+    <title>Layout Estruturado</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            background-color: #f0f0f0;
+        }
+        .container {
+            width: 60%;
+            background: white;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            background: #ddd;
+        }
+        .mensagens {
+            background: #f8c8dc;
+            padding: 10px;
+        }
+        .main {
+            background: #c8f8c8;
+            padding: 10px;
+        }
+        .aulas {
+            margin-bottom: 10px;
+            background: white;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        .noticias {
+            background: #f8f8c8;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <!-- Cabeçalho com informações do usuário -->
-            <p>Old Raphael</p>
+            <div>Ícone</div>
+            <div>Logo</div>
+            <div>Ícone</div>
+        </div>
+        <div class="mensagens">
+            <p><strong>Olá Raphael</strong></p>
             <p>Você possui um armário reservado com entrega para hoje...</p>
             <p>Você possui uma pendência no financeiro...</p>
         </div>
-        <div class="disciplinas">
-            <!-- Lista de disciplinas com horários -->
-            <div class="disciplina">
-                <p>Disciplina</p>
-                <p>Sale e Horário</p>
+        <div class="main">
+            <div class="aulas">
+                <p><strong>Disciplina</strong></p>
+                <p>Sala e Horário</p>
             </div>
-            <div class="disciplina">
-                <p>Disciplina</p>
-                <p>Sale e Horário</p>
+            <div class="aulas">
+                <p><strong>Disciplina</strong></p>
+                <p>Sala e Horário</p>
             </div>
-            <div class="disciplina">
-                <p>Disciplina</p>
-                <p>Sale e Horário</p>
+            <div class="aulas">
+                <p><strong>Disciplina</strong></p>
+                <p>Sala e Horário</p>
             </div>
         </div>
         <div class="noticias">
-            <!-- Card de notícias -->
-            <p>Cardi de Notícias</p>
-            <p>Suérfalo</p>
-        </div>
-        <div class="footer">
-            <!-- Rodapé com mensagens e outras informações -->
-            <p>mensagens</p>
-            <p>audas</p>
-            <p>maio</p>
-            <p>notícias</p>
+            <p><strong>Card de Notícias</strong></p>
+            <p>Subtítulo</p>
         </div>
     </div>
 </body>
