@@ -97,41 +97,80 @@ document.addEventListener('DOMContentLoaded', () => {
                     <h3>${event.title}</h3>
                     <p>${event.description}</p>
                     <p>
-                        <span class="material-icons-outlined">event</span> ${event.date} às ${event.time}
-                        <span class="material-icons-outlined">pin_drop</span> ${event.location}
+                        <span class="material-icons-outlined icon">event</span> ${event.date} às ${event.time}
+                        <span class="material-icons-outlined icon">pin_drop</span> ${event.location}
                     </p>
                 </div>
             `;
             carousel.appendChild(card);
         });
-    }
 
-    // Configura a navegação do carrossel
-    function setupCarouselNavigation() {
+        // Configuração do carrossel
+        let currentIndex = 0;
+        let autoSlideInterval;
+
+        // Função para atualizar a posição do carrossel
+        function updateCarousel() {
+            carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        // Função para avançar ao próximo card
+        function nextCard() {
+            currentIndex = (currentIndex + 1) % eventos.length;
+            updateCarousel();
+        }
+
+        // Função para voltar ao card anterior
+        function prevCard() {
+            currentIndex = (currentIndex - 1 + eventos.length) % eventos.length;
+            updateCarousel();
+        }
+
+        // Função para iniciar a passagem automática
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(nextCard, 5000); // 5 segundos
+        }
+
+        // Função para pausar a passagem automática
+        function stopAutoSlide() {
+            clearInterval(autoSlideInterval);
+        }
+
+        // Botões de navegação
         const prevBtn = document.getElementById('prevBtn');
         const nextBtn = document.getElementById('nextBtn');
-        const carousel = document.querySelector('.carousel');
-
-        if (prevBtn && nextBtn && carousel) {
-            let currentIndex = 0;
-            const cardWidth = 100 / eventos.length; // Largura proporcional por card
-
+        if (prevBtn && nextBtn) {
             prevBtn.addEventListener('click', () => {
-                if (currentIndex > 0) {
-                    currentIndex--;
-                    carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
-                }
+                stopAutoSlide(); // Pausa ao clicar manualmente
+                prevCard();
+                startAutoSlide(); // Reinicia após a ação
             });
-
             nextBtn.addEventListener('click', () => {
-                if (currentIndex < eventos.length - 1) {
-                    currentIndex++;
-                    carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
-                }
+                stopAutoSlide(); // Pausa ao clicar manualmente
+                nextCard();
+                startAutoSlide(); // Reinicia após a ação
             });
         }
-    }
 
-    // Chama a função para configurar a navegação
-    setupCarouselNavigation();
+        // Pausar ao passar o mouse
+        carousel.addEventListener('mouseenter', stopAutoSlide);
+        carousel.addEventListener('mouseleave', startAutoSlide);
+
+        // Suporte a arrastar no celular
+        let startX;
+        carousel.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            stopAutoSlide(); // Pausa ao tocar
+        });
+        carousel.addEventListener('touchend', (e) => {
+            const endX = e.changedTouches[0].clientX;
+            if (startX - endX > 50) nextCard();
+            if (endX - startX > 50) prevCard();
+            startAutoSlide(); // Reinicia ao soltar
+        });
+
+        // Inicializa o carrossel
+        updateCarousel();
+        startAutoSlide(); // Começa a passagem automática
+    }
 });
