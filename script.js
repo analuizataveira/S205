@@ -65,9 +65,9 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             id: 3,
             title: 'Festa dos Alunos 2025',
-            date: '18/05',
+            date: '19/05',
             time: '19:00',
-            location: 'Área Esportiva do Inatel',
+            location: 'Área Esportiva',
             type: 'cultural',
             description: 'Venha comemorar a melhor Festa dos Alunos de todos os tempos!',
             image: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=800&h=400'

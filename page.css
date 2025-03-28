@@ -54,35 +54,38 @@ body {
     padding: 16px;
     border-radius: 8px;
     color: white;
+    align-items: center;
+}
+
+.header .material-icons-outlined {
+    font-size: 24px;
+    color: white;
 }
 
 .mensagens {
-    background: #f8c8dc;
+    background: white;
     padding: 16px;
     border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.mensagens p {
+    font-size: 14px;
+    color: var(--cor-texto);
+    margin-bottom: 8px;
+}
+
+.mensagens p strong {
+    font-size: 16px;
 }
 
 .main {
-    background: #c8f8c8;
-    padding: 16px;
+    background: transparent;
+    padding: 0;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
     gap: 16px;
-}
-
-.aulas {
-    background: white;
-    padding: 16px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-}
-
-.noticias {
-    background: #f8f8c8;
-    padding: 16px;
-    border-radius: 8px;
-    text-align: center;
 }
 
 /* Estilização do SVG do Inatel */
@@ -92,7 +95,7 @@ body {
 }
 
 .path_logo {
-    fill: var(--cor-fundo);
+    fill: white; /* Cor do logo ajustada para branco */
 }
 
 /* Estilização dos ícones */
@@ -171,7 +174,7 @@ body {
 
 .carousel-card img {
     width: 100%;
-    height: 300px; /* Aumentado de 200px para 300px */
+    height: 150px; /* Ajustado para corresponder à imagem */
     object-fit: cover;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
@@ -234,10 +237,6 @@ body {
     .main {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-    }
-
-    .aulas {
-        flex: 1;
     }
 }
 

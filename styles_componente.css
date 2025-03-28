@@ -1,0 +1,58 @@
+/* Título da Aula */
+.titulo_aula {
+    font-weight: bold;
+    font-size: 16px; /* Tamanho um pouco maior para mais destaque */
+    padding: 0 8px; /* Espaço extra para um visual mais espaçado */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 20px; /* Aumenta o espaço abaixo do título */
+}
+
+/* Container de Labels */
+.lables {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Aumenta o espaçamento entre as labels */
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Garante que as labels comecem da esquerda */
+}
+
+/* Label Prova, Frequência e Nota */
+.lable-prova,
+.lable-frequencia,
+.lable-nota {
+    padding: 8px 18px; /* Um pouco mais de espaço dentro das labels */
+    margin-bottom: 12px; /* Aumenta o espaço abaixo para uma aparência mais arejada */
+    border-radius: 50px; /* Garante bordas bem arredondadas */
+    text-align: center;
+    font-size: 14px; /* Ajuste de tamanho para melhorar legibilidade */
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block; /* Permite que as labels se alinhem corretamente */
+}
+
+/* Cores específicas para cada label */
+.lable-prova {
+    background-color: var(--prova);
+}
+
+.lable-frequencia {
+    background-color: var(--frequencia);
+}
+
+.lable-nota {
+    background-color: var(--nota);
+}
+
+/* Estilo da Label de Texto */
+.p_lable {
+    font-size: 14px; /* Aumenta o tamanho para combinar com as outras labels */
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block; /* Garante que o texto da label seja centralizado corretamente */
+}
