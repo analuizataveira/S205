@@ -73,6 +73,8 @@ body {
     font-size: 14px;
     color: var(--cor-texto);
     margin-bottom: 8px;
+    display: flex;
+    align-items: center;
 }
 
 .mensagens p strong {
@@ -103,6 +105,12 @@ body {
     font-family: 'Material Icons Outlined';
     font-size: 24px;
     color: var(--cor-secundaria);
+}
+
+.mensagens .material-icons-outlined {
+    font-size: 18px;
+    margin-right: 8px;
+    color: var(--cor-texto);
 }
 
 /* Estilo do botão de temas */

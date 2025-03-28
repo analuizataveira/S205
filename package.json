@@ -1,5 +1,7 @@
 {
   "dependencies": {
-    "favicon": "^0.0.2"
+    "favicon": "^0.0.2",
+    "http": "^0.0.1-security",
+    "server": "^1.0.41"
   }
 }

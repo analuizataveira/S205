@@ -1,40 +1,100 @@
+:root {
+  --frequencia: #126ae2;
+  --nota: #126ae2;
+  --prova: #126ae2;
+}
+
+/* Estilo geral do container do cronograma */
+.cronograma {
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo de cada aula */
+.aula {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  padding: 15px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Efeito de hover para destacar a aula */
+.aula:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilo do título da aula */
 .titulo_aula {
-    font-weight: bold;
-    font-size: 15px;
-    padding: 0 5px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  
-  .lables {
-    display: flex;
-  }
-  
-  .lable-prova,
-  .lable-frequencia,
-  .lable-nota {
-    background-color: var(--prova);
-    padding: 7px 15px;
-    margin-bottom: 10px;
-    border-radius: 500px;
-    text-align: center;
-    margin-right: 10px;
-  }
-  
-  .lable-frequencia {
-    background-color: var(--frequencia);
-  }
-  
-  .lable-nota {
-    background-color: var(--nota);
-  }
-  
-  .p_lable {
-    font-size: 13px;
-    color: white;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  
+  font-weight: bold;
+  font-size: 15px;
+  padding: 0 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+/* Estilo dos detalhes (local e horário) */
+.detalhes {
+  font-size: 14px;
+  color: #666;
+  padding: 0 5px;
+  margin-bottom: 10px;
+}
+
+/* Estilo dos labels */
+.lables {
+  display: flex;
+  flex-wrap: wrap; /* Permite que os labels quebrem linha se necessário */
+  gap: 10px; /* Espaçamento entre os labels */
+}
+
+/* Estilo dos labels individuais */
+.lable-prova,
+.lable-frequencia,
+.lable-nota {
+  background-color: var(--prova);
+  padding: 7px 25px; /* Aumentei o padding horizontal para tornar mais comprido */
+  margin-bottom: 10px;
+  border-radius: 500px;
+  text-align: center;
+  min-width: 100px; /* Define uma largura mínima para garantir que o label seja mais comprido */
+}
+
+/* Ajuste de cores específicas */
+.lable-frequencia {
+  background-color: var(--frequencia);
+}
+
+.lable-nota {
+  background-color: var(--nota);
+}
+
+/* Estilo do texto dentro dos labels */
+.p_lable {
+  font-size: 13px;
+  color: white;
+  white-space: nowrap; /* Mantém o texto em uma linha */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Estilo da div comp-aula */
+.comp-aula {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  padding: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra nas bordas */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
